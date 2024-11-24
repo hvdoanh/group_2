@@ -23,4 +23,4 @@ const ROOT_URL = "http://localhost/du-an-groupTwo/";
 
 // đường dẫn website đến admin
 
-const ADMIN_URL = ROOT_DIR ."admin/";
+const ADMIN_URL = ROOT_URL ."admin/";
