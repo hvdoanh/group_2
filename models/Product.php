@@ -21,18 +21,18 @@ class Product extends BaseModel{
     // thêm dữ liệu
     public function create($data){
         $sql = "INSERT INTO products( name, image, price, description, content, status, category_id) VALUES 
-        (:name, :image, :price , :description,:conten, :status, :category_id)";
+        (:name, :image, :price , :description,:content, :status, :category_id)";
          $stmt = $this->conn->prepare($sql);
          $stmt->execute($data);
     }
 
     // cập nhật 
     public function update($id, $data){
-        $sql = "UPDATE products SET name=:name, image=:image, price=:price , description=:description, content=:content , status=:status , category_id=:category_id WHERE id=:id";
+        $sql = "UPDATE products SET name=:name, image=:image, price=:price, description=:description, content=:content, status=:status, category_id=:category_id WHERE id=:id";
         $stmt = $this->conn->prepare($sql);
         // thêm id và data
         $data['id'] = $id;
-        $stmt->execute();
+        $stmt->execute($data);
     }
 
     //xoá
@@ -48,5 +48,6 @@ class Product extends BaseModel{
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE p.id=:id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
