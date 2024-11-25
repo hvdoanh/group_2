@@ -39,6 +39,10 @@
             doanh
         </div>
         <div class="mb-3">
+            <label for="">Số lượng sản phẩm</label>
+            <input type="number" name="quantity" value="<?= $product['quantity'] ?>" class="form-control">
+        </div>
+        <div class="mb-3">
             <label for="">Mô tả ngắn</label>
             <textarea name="description" rows="4" id="" class="form-control"><?= $product['description'] ?></textarea>
         </div>

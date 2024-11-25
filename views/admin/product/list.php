@@ -13,6 +13,7 @@
                 <th scope="col">Hình ảnh</th>
                 <th scope="col">Giá</th>
                 <th scope="col">Trạng thái</th>
+                <th scope="col">Số lượng</th>
                 <th scope="col">Danh mục</th>
 
                 <th scope="col">
@@ -28,12 +29,13 @@
                 <td>
                     <img src="<?= ROOT_URL . $pro['image']?>" width="60" alt="">
                 </td>
-                <td><?= number_format($pro['price'] )?> VNĐ</td>
+                <td>$<?= number_format($pro['price'] )?></td>
                 <td>
                     <span class="<?= $pro['status'] ? 'btn btn-success' : 'btn btn-danger' ?>">
                         <?= $pro['status'] ?  'Đang kinh doanh' : 'Ngừng kinh doanh'?>
                     </span>
                 </td>
+                <td><?= $pro['quantity'] ?></td>
                 <td><?= $pro['cate_name'] ?></td>
                 <td>
                     <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $pro['id'] ?>" class="btn btn-warning">Sửa</a>
