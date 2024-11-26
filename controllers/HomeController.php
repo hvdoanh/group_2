@@ -8,7 +8,6 @@ class HomeController{
         $womens = $product->listProductInCategory(2); // quần áo nữ
         $categories = (new Category)->all();
 
-        
 
         $title = "Trang chủ website quần áo";
 

@@ -84,10 +84,19 @@
                         <div class="col mt-10 mb-10">
                             <!-- Header Shop Links Start -->
                             <div class="header-top-right">
-
-                                <p><a href="my-account.html">My Account</a></p>
-                                <p><a href="login-register.html">Register</a><a href="login-register.html">Login</a></p>
-
+                                <?php if (isset($_SESSION['user'])) : ?>
+                                <p>
+                                    <a href="<?= ROOT_URL  ?>">
+                                        Tên người dùng:<?= $_SESSION['user']['fullname'] ?>
+                                    </a>
+                                    <a href="<?= ROOT_URL . '?ctl=logout' ?>">Logout</a>
+                                </p>
+                                <?php else :?>
+                                <p>
+                                    <a href="<?= ROOT_URL  . '?ctl=register' ?>">Register</a>
+                                    <a href="<?= ROOT_URL  . '?ctl=login' ?>">Login</a>
+                                </p>
+                                <?php  endif ?>
                             </div><!-- Header Shop Links End -->
                         </div>
 
