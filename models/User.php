@@ -45,10 +45,14 @@ class User extends BaseModel{
     
    
 
-    // xoá 
-    public function delete($id){
-        $sql = "DELETE FROM users WHERE id=:id";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute(['id'=>$id]);
-    }
+  
+
+    // cập nhật trạng thái user
+        public function updateActive($id, $active){
+            $sql = "UPDATE users SET active=:active WHERE id=:id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['id' => $id, 'active' => $active]);
+            
+        }
+    
 }

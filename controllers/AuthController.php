@@ -1,5 +1,9 @@
 <?php
 class AuthController{
+
+
+  
+
     // đăng kí
     public function register(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -49,11 +53,10 @@ class AuthController{
                     $_SESSION['user'] = $user;
                     // nếu role= admin vào trang admin  , role =  user vào trang người dùng
                     
-                    if($user['role'] == 'admin'){
+                    if($user['role'] == 'user'){
                         header("Location: " . ADMIN_URL);
                         die;
                     }else{
-                        
                         header("Location: " . ROOT_URL);
                         die;
                     }
@@ -81,4 +84,24 @@ class AuthController{
         die;
     }
 
+
+ 
+
+
+    public function index(){
+        $users = (new User)->all();
+        return view('admin.users.list', compact('users'));
+    }
+
+    public function updateActive(){
+        $data = $_POST;
+
+        $data['active'] = $data['active'] ? 0 : 1;
+         
+        (new User)->updateActive($data['id'], $data['active']);
+
+        return header("Location: " . ADMIN_URL . '?ctl=listuser');
+         
+    }
+    
 }

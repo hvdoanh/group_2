@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm'?>">Danh mục</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listuser'?>">Tài khoản</a>
+                        </li>
 
                     </ul>
                     <form class="d-flex" role="search">
