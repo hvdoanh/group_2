@@ -120,8 +120,8 @@
 
                             <div class="content-left">
 
-                                <h4 class="title">
-                                    <a href=""><?= $men['name']?></a>
+                                <h4 class="title"><a
+                                        href="<?= ROOT_URL . '?ctl=detail&id=' .$men['id'] ?>"><?= $men['name']?></a>
                                 </h4>
 
                                 <div class="ratting">
@@ -243,7 +243,9 @@
 
                             <div class="content-left">
 
-                                <h4 class="title"><a href="single-product.html"><?= $wo['name']?></a></h4>
+                                <h4 class="title"><a
+                                        href="<?= ROOT_URL . '?ctl=detail&id=' .$wo['id'] ?>"><?= $wo['name']?></a>
+                                </h4>
 
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>

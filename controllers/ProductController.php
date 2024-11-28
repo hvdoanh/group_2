@@ -35,6 +35,12 @@ class ProductController{
         // danh sách sp liên quan 
         $productReleads = (new Product)->listProductReload($product['category_id'], $id);
 
+        // lưu thông itn uRI vào session
+        $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
+
+        
+        $_SESSION['totalQuantity']  = (new CartController)->totalSumQuantity();
+      
         
         return view('clients.products.detail',
                      compact('product', 'title', 'categories', 'productReleads')

@@ -111,9 +111,16 @@
 
                             <div class="actions">
 
-                                <button><i class="ti-shopping-cart"></i><span>ADD TO CART</span></button>
-                                <button class="box" data-tooltip="Compare"><i class="ti-control-shuffle"></i></button>
-                                <button class="box" data-tooltip="Wishlist"><i class="ti-heart"></i></button>
+                                <button>
+                                    <i class="ti-shopping-cart"></i>
+                                    <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>">ADD TO CART</a>
+                                </button>
+                                <button class="box" data-tooltip="Compare">
+                                    <i class="ti-control-shuffle"></i>
+                                </button>
+                                <button class="box" data-tooltip="Wishlist">
+                                    <i class="ti-heart"></i>
+                                </button>
 
                             </div>
 
@@ -214,7 +221,9 @@
 
                             <div class="image-overlay">
                                 <div class="action-buttons">
-                                    <button>add to cart</button>
+                                    <button>
+                                        <a href="<?= ROOT_URL . '?ctl=add-cart&id=' .$product['id'] ?>">ADD TO CART</a>
+                                    </button>
                                     <button>add to wishlist</button>
                                 </div>
                             </div>

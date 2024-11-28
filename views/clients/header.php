@@ -141,8 +141,12 @@
                                 </div>
 
                                 <div class="header-mini-cart">
-                                    <a href="cart.html"><img src="assets/images/icons/cart.png" alt="Cart">
-                                        <span>02($250)</span></a>
+                                    <a href="<?= ROOT_URL . "?ctl=view-cart" ?>"><img src="assets/images/icons/cart.png"
+                                            alt="Cart">
+                                        <span>
+                                            <?= $_SESSION['totalQuantity'] ?? 0 ?>
+                                        </span>
+                                    </a>
                                 </div>
 
                             </div><!-- Header Advance Search End -->
