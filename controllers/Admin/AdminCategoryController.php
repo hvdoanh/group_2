@@ -1,66 +1,73 @@
 <?php
 
-class AdminCategoryController{
+class AdminCategoryController
+{
 
-    public function __construct(){
+    public function __construct()
+    {
 
         $user = $_SESSION['user'] ?? [];
-        
-        if($user || $user['role'] != 'admin' ){
+
+        if (!$user || $user['role'] != 'admin') {
             return header("Location: " . ROOT_URL);
         }
     }
 
-    public function index(){
+    public function index()
+    {
         $categories = (new Category)->all();
         // lấy thông tin  từ session
         $message = session_flash('message');
-       
+
         return view('admin.categories.list', compact('categories', 'message'));
     }
 
     // form
-    public function create(){
+    public function create()
+    {
         return view('admin.categories.add');
     }
 
     // lưu vào csdl
-    public function store(){
+    public function store()
+    {
         $data = $_POST;
 
-        
+
         (new Category)->create($data);
-        
+
         // lưu tb vào session
         $_SESSION['message'] = "Thêm dữ liệu thành công";
-        
+
         header("location: " . ADMIN_URL . "?ctl=listdm");
     }
-    
-// hiện thị form
-    public function edit(){
+
+    // hiện thị form
+    public function edit()
+    {
         $id = $_GET['id'];
         $category = (new Category)->find($id);
         $message =  session_flash('message');
-        return view('admin.categories.edit', compact('category','message'));
+        return view('admin.categories.edit', compact('category', 'message'));
     }
 
     //update
-    public function update(){
+    public function update()
+    {
         $data = $_POST;
-        (new Category)->update($data['id'],$data);
+        (new Category)->update($data['id'], $data);
         $_SESSION['message'] = "Cập nhật thành công";
-        
-        header("location: " . ADMIN_URL . '?ctl=editdm&id=' . $data['id'] );
-        
+
+        header("location: " . ADMIN_URL . '?ctl=editdm&id=' . $data['id']);
     }
     //xoá
-    public function delete(){
+    public function delete()
+    {
         $id = $_GET['id'];
         // kiểm tra xem có dữ liệu của product thuộc category kh
         $products = (new Product)->listProductInCategory($id);
-        
-        if($products){
+
+        if ($products) {
             $_SESSION['message'] = "Không thể xoá, vì có sản phẩm của danh mục";
             header("location: " . ADMIN_URL . "?ctl=listdm");
             return;
@@ -71,6 +78,5 @@ class AdminCategoryController{
         $_SESSION['message'] = "Xoá dữ liệu thành công";
         header("location: " . ADMIN_URL . "?ctl=listdm");
         return;
-
     }
 }

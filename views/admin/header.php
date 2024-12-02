@@ -24,13 +24,17 @@
                             <a class="nav-link active" aria-current="page" href="<?= ADMIN_URL ?>">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Sản phẩm</a>
+                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Sản phẩm
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm'?>">Danh mục</a>
+                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">Danh mục</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listuser'?>">Tài khoản</a>
+                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listuser' ?>">Tài khoản</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=list-order' ?>">Đơn hàng</a>
                         </li>
 
                     </ul>

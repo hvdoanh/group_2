@@ -100,7 +100,7 @@
                             </tbody>
                         </table>
                         <div class="proceed-to-checkout section mt-30">
-                            <a href="<?= ROOT_URL . '?ctl=checkout' ?>">Proceed to Checkout</a>
+                            <a href="<?= ROOT_URL . '?ctl=view-checkout' ?>">Proceed to Checkout</a>
                         </div>
                     </div>
                 </div>

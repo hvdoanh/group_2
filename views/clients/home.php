@@ -109,8 +109,11 @@
 
                             <div class="image-overlay">
                                 <div class="action-buttons">
-                                    <button>add to cart</button>
-                                    <button>add to wishlist</button>
+                                    <button>
+                                        <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $men['id'] ?>">
+                                            ADD TO CART</a>
+                                    </button>
+                                    <button>ADD TO WISHLIST</button>
                                 </div>
                             </div>
 
@@ -232,8 +235,9 @@
 
                             <div class="image-overlay">
                                 <div class="action-buttons">
-                                    <button>add to cart</button>
-                                    <button>add to wishlist</button>
+                                    <button><a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $wo['id'] ?>">ADD TO
+                                            CART</a></button>
+                                    <button>ADD TO WISHLIST</button>
                                 </div>
                             </div>
 

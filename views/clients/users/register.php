@@ -9,7 +9,7 @@
                 <h1>Register</h1>
                 <ul class="page-breadcrumb">
                     <li><a href=" ">Home</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="<?= ROOT_URL . '?ctl=login' ?>">Login</a></li>
                 </ul>
 
             </div>
@@ -20,7 +20,6 @@
 <!-- Page Section Start -->
 <div class="page-section section section-padding">
     <div class="container">
-
 
 
         <div class="login-register-form-wrap">

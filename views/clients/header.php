@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Quần áo - <?=$title ?? "" ?></title>
+    <title>Quần áo - <?= $title ?? "" ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -91,12 +91,12 @@
                                     </a>
                                     <a href="<?= ROOT_URL . '?ctl=logout' ?>">Logout</a>
                                 </p>
-                                <?php else :?>
+                                <?php else : ?>
                                 <p>
                                     <a href="<?= ROOT_URL  . '?ctl=register' ?>">Register</a>
                                     <a href="<?= ROOT_URL  . '?ctl=login' ?>">Login</a>
                                 </p>
-                                <?php  endif ?>
+                                <?php endif ?>
                             </div><!-- Header Shop Links End -->
                         </div>
 
@@ -156,11 +156,12 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul>
-                                        <li class="active"><a href="index.html">HOME</a>
+                                        <li class="active">
+                                            <a href="<?= ROOT_URL ?>">HOME</a>
                                             <ul class="sub-menu">
-                                                <?php foreach($categories as $cate) : ?>
-                                                <li class="active">
-                                                    <a href="<?= ROOT_URL . '?ctl=category&id='. $cate['id'] ?>">
+                                                <?php foreach ($categories as $cate) : ?>
+                                                <li class=" active">
+                                                    <a href="<?= ROOT_URL . '?ctl=category&id=' . $cate['id'] ?>">
                                                         <?= $cate['cate_name'] ?>
                                                     </a>
                                                 </li>

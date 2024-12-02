@@ -9,8 +9,8 @@
 
                 <h1>Login</h1>
                 <ul class="page-breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="<?= ROOT_URL ?>">Home</a></li>
+                    <li><a href="<?= ROOT_URL . '?ctl=register' ?>">Register</a></li>
                 </ul>
 
             </div>
@@ -23,15 +23,15 @@
     <div class="container">
         <div class="row mbn-40">
             <!--  đăng kí thành công -->
-            <?php if($message !== '') : ?>
-            <div class="alert alert-success">
-                <?= $message ?>
-            </div>
+            <?php if ($message !== '') : ?>
+                <div class="alert alert-success">
+                    <?= $message ?>
+                </div>
             <?php endif ?>
             <div class="col-lg-4 col-12 mb-40">
                 <div class="login-register-form-wrap">
                     <h3>Login</h3>
-                    <form action="<?=  ROOT_URL . '?ctl=login'?>" class="mb-30" method="POST">
+                    <form action="<?= ROOT_URL . '?ctl=login' ?>" class="mb-30" method="POST">
                         <div class="row">
                             <div class="col-12 mb-15">
                                 <input type="text" name="email" placeholder="Username or Email">
@@ -52,10 +52,10 @@
                         <a href="#"><i class="fa fa-pinterest"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
-                    <?php if($error) : ?>
-                    <div class="alert alert-danger">
-                        <?= $error ?>
-                    </div>
+                    <?php if ($error) : ?>
+                        <div class="alert alert-danger">
+                            <?= $error ?>
+                        </div>
                     <?php endif ?>
                 </div>
             </div>

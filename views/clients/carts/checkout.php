@@ -23,7 +23,7 @@
     <div class="row">
         <!-- Form thông tin thanh toán -->
         <div class="col-md-7">
-            <form action="" method="POST">
+            <form action="<?= ROOT_URL . '?ctl=checkout' ?>" method="POST">
                 <!-- Thông tin người nhận -->
                 <div class="card mb-4">
                     <div class="card-header bg-primary text-white">
@@ -50,10 +50,9 @@
                                 Địa chỉ giao hàng
                             </label>
                             <textarea class="form-control" id="address" name="address" rows="3"
-                                placeholder="Nhập địa chỉ giao hàng" required>
-                                <?= $user['address'] ?>
-                            </textarea>
+                                placeholder="Nhập địa chỉ giao hàng" required><?= $user['address'] ?></textarea>
                         </div>
+                        <input type="hidden" name="id" value="<?= $user['id'] ?>">
                     </div>
                 </div>
 
@@ -98,16 +97,16 @@
                 <div class="card-body">
                     <ul class="list-group">
                         <!-- Sản phẩm 1 -->
-                        <?php foreach($carts as $cart) : ?>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <div>
-                                <h3 class="mb-0"><?= $cart['name'] ?></h3>
-                                <span class="text-muted">
-                                    Số lượng: <?= $cart['quantity'] ?>
-                                </span>
-                            </div>
-                            <span>$<?= number_format($cart['price'] * $cart['quantity']) ?></span>
-                        </li>
+                        <?php foreach ($carts as $cart) : ?>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="mb-0"><?= $cart['name'] ?></h3>
+                                    <span class="text-muted">
+                                        Số lượng: <?= $cart['quantity'] ?>
+                                    </span>
+                                </div>
+                                <span>$<?= number_format($cart['price'] * $cart['quantity']) ?></span>
+                            </li>
                         <?php endforeach  ?>
                 </div>
                 <!-- Tổng tiền -->

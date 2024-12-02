@@ -9,6 +9,7 @@ require_once __DIR__ . "/models/BaseModel.php";
 require_once __DIR__ . "/models/Category.php";
 require_once __DIR__ . "/models/Product.php";
 require_once __DIR__ . "/models/User.php";
+require_once __DIR__ . "/models/Order.php";
 
 
 require_once __DIR__ . "/controllers/HomeController.php";
@@ -30,7 +31,9 @@ match ($ctl) {
     'view-cart' => (new CartController)->viewCart(),
     'delete-cart' => (new CartController)->deleteProductInCart(),
     'update-cart' => (new CartController)->updateCart(),
-    'checkout' => (new CartController)->viewCheckOut(),
+    'view-checkout' => (new CartController)->viewCheckOut(),
+    'checkout' => (new CartController)->checkOut(),
+    'success' => (new CartController)->success(),
     default => view('errors.404'),
     
 };

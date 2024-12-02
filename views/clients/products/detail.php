@@ -36,6 +36,10 @@
 
 </div><!-- Hero Section End -->
 
+
+
+
+
 <!-- Page Section Start -->
 <div class="page-section section section-padding">
     <div class="container">
@@ -82,10 +86,10 @@
                             </div>
 
                             <span class="availability">Availability:
-                                <?php if($product['quantity'] > 0) : ?>
-                                <span class="badge bg-success">Còn hàng</span>
+                                <?php if ($product['quantity'] > 0) : ?>
+                                    <span class="badge bg-success">Còn hàng</span>
                                 <?php else : ?>
-                                <span class="badge bg-danger">Hết hàng</span>
+                                    <span class="badge bg-danger">Hết hàng</span>
                                 <?php endif ?>
                             </span>
 
@@ -210,61 +214,61 @@
 
         <div class="related-product-slider related-product-slider-1 slick-space p-0">
 
-            <?php foreach($productReleads as $pro) : ?>
-            <div class="slick-slide">
+            <?php foreach ($productReleads as $pro) : ?>
+                <div class="slick-slide">
 
-                <div class="product-item">
-                    <div class="product-inner">
+                    <div class="product-item">
+                        <div class="product-inner">
 
-                        <div class="image">
-                            <img src="<?= ROOT_URL . $pro['image']  ?>" alt="">
+                            <div class="image">
+                                <img src="<?= ROOT_URL . $pro['image']  ?>" alt="">
 
-                            <div class="image-overlay">
-                                <div class="action-buttons">
-                                    <button>
-                                        <a href="<?= ROOT_URL . '?ctl=add-cart&id=' .$product['id'] ?>">ADD TO CART</a>
-                                    </button>
-                                    <button>add to wishlist</button>
+                                <div class="image-overlay">
+                                    <div class="action-buttons">
+                                        <button>
+                                            <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>">ADD TO CART</a>
+                                        </button>
+                                        <button>add to wishlist</button>
+                                    </div>
                                 </div>
+
+                            </div>
+
+                            <div class="content">
+
+                                <div class="content-left">
+
+                                    <h4 class="title"><a
+                                            href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>"><?= $pro['name']  ?></a>
+                                    </h4>
+
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                    <h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span>
+                                    </h5>
+                                    <h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span
+                                            style="background-color: #0271bc"></span><span
+                                            style="background-color: #efc87c"></span><span
+                                            style="background-color: #00c183"></span></h5>
+
+                                </div>
+
+                                <div class="content-right">
+                                    <span class="price">$<?= $pro['price'] ?></span>
+                                </div>
+
                             </div>
 
                         </div>
-
-                        <div class="content">
-
-                            <div class="content-left">
-
-                                <h4 class="title"><a
-                                        href="<?= ROOT_URL . '?ctl=detail&id=' .$product['id'] ?>"><?= $pro['name']  ?></a>
-                                </h4>
-
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-
-                                <h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span>
-                                </h5>
-                                <h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span
-                                        style="background-color: #0271bc"></span><span
-                                        style="background-color: #efc87c"></span><span
-                                        style="background-color: #00c183"></span></h5>
-
-                            </div>
-
-                            <div class="content-right">
-                                <span class="price">$<?= $pro['price'] ?></span>
-                            </div>
-
-                        </div>
-
                     </div>
-                </div>
 
-            </div>
+                </div>
 
             <?php endforeach ?>
 
