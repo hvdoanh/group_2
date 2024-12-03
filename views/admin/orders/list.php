@@ -1,8 +1,11 @@
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
 
-<?php include_once ROOT_DIR . "views/admin/header.php" ?>
 <div class="container">
-
+    <?php if ($message !== '') : ?>
+    <div class="alert alert-success">
+        <?= $message ?>
+    </div>
+    <?php endif ?>
     <table class="table">
         <thead>
             <tr>
@@ -54,7 +57,7 @@
                 <td>
                     <a href="<?= ADMIN_URL . '?ctl=detail-order&id=' . $order['id'] ?>" class="btn btn-warning">Cập
                         nhật</a>
-                    <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $order['id'] ?>" class="btn btn-danger">Xoá</a>
+                    <a href="<?= ADMIN_URL . '?ctl=delete-order&id=' . $order['id'] ?>" class="btn btn-danger">Xoá</a>
 
                 </td>
 
@@ -63,7 +66,5 @@
         </tbody>
     </table>
 </div>
-
-<?php include_once ROOT_DIR . "views/admin/footer.php" ?>
 
 <?php include_once ROOT_DIR . "views/admin/footer.php" ?>

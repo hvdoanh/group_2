@@ -196,7 +196,7 @@
                                                 <li><a href="single-blog.html">Single Blog</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">CONTACT</a></li>
+                                        <li><a href="<?= ROOT_URL . '?ctl=list-order' ?>">ORDER HISTRORY</a></li>
                                     </ul>
                                 </nav>
                             </div>

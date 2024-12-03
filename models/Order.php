@@ -33,6 +33,19 @@ class Order extends BaseModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    // chi tiết hoá đon theo user
+    public function findOrtherUser($user_id)
+    {
+        $sql = "SELECT o.*, fullname, email, address, phone
+        FROM orders o JOIN users u ON o.user_id=u.id 
+        WHERE o.user_id=:user_id";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['user_id' => $user_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
     // danh sách sản phẩm của hoá đơn
     public function listOrderDetail($id)
     {
@@ -72,5 +85,12 @@ class Order extends BaseModel
                 VALUES(:order_id, :product_id, :price, :quantity)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute($data);
+    }
+    //xoá
+    public function delete($id)
+    {
+        $sql = "DELETE FROM orders WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id]);
     }
 }

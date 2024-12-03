@@ -47,4 +47,5 @@ match ($ctl) {
     //order
     'list-order' => (new OrderController)->index(),
     'detail-order' => (new OrderController)->showOrder(),
+    'delete-order' => (new OrderController)->deleteOrder(),
 };

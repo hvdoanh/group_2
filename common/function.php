@@ -36,8 +36,8 @@ function getOrderStatus($status)
 {
     $status_details = [
         1  => 'Chờ xử lý',
-        2  => 'Đang  xử lý',
-        3  => 'Đã giao hàng',
+        2  => 'Đang xử lý',
+        3  => 'Đang giao hàng',
         4  => 'Hoàn thành',
         5  => 'Đã huỷ',
 
