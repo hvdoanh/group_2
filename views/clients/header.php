@@ -128,12 +128,9 @@
                                             alt="Search Toggle"><img class="toggle-close"
                                             src="assets/images/icons/close.png" alt="Search Toggle"></button>
                                     <div class="header-search-wrap">
-                                        <form class="d-flex" role="search" method="GET"
-                                            action="<?= ROOT_URL . '?ctl=search' ?>">
-                                            <input type="search" placeholder="Tìm kiếm" aria-label="Search" id="keyword"
-                                                name="keyword">
-                                            <button type="submit"><img src="assets/images/icons/search.png" alt="Search"
-                                                    id="btnSearch"></button>
+                                        <form action="#">
+                                            <input type="text" placeholder="Type and hit enter">
+                                            <button><img src="assets/images/icons/search.png" alt="Search"></button>
                                         </form>
                                     </div>
                                 </div>
