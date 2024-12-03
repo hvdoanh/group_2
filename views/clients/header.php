@@ -112,7 +112,7 @@
                         <div class="col mt-15 mb-15">
                             <!-- Logo Start -->
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href="<?= ROOT_URL ?>">
                                     <img src="assets/images/logo.png" alt="Jadusona">
                                 </a>
                             </div>
@@ -128,9 +128,12 @@
                                             alt="Search Toggle"><img class="toggle-close"
                                             src="assets/images/icons/close.png" alt="Search Toggle"></button>
                                     <div class="header-search-wrap">
-                                        <form action="#">
-                                            <input type="text" placeholder="Type and hit enter">
-                                            <button><img src="assets/images/icons/search.png" alt="Search"></button>
+                                        <form class="d-flex" role="search" method="GET"
+                                            action="<?= ROOT_URL . '?ctl=search' ?>">
+                                            <input type="search" placeholder="Tìm kiếm" aria-label="Search" id="keyword"
+                                                name="keyword">
+                                            <button type="submit"><img src="assets/images/icons/search.png" alt="Search"
+                                                    id="btnSearch"></button>
                                         </form>
                                     </div>
                                 </div>

@@ -12,7 +12,10 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="<?= ROOT_URL ?>">Navbar</a>
+                <a class="navbar-brand" href="<?= ROOT_URL ?>">
+                    <img src="https://static.vecteezy.com/system/resources/previews/011/514/431/original/ninja-mascot-esport-logo-template-creative-ninja-logo-design-concepts-vector.jpg"
+                        alt="Jadusona" width="100">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
