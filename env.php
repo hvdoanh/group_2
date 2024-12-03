@@ -19,7 +19,7 @@ const ROOT_DIR = __DIR__  . "/";
 
 // đường dẫn website
 
-const ROOT_URL = "http://localhost/du-an-groupTwo/";
+const ROOT_URL = "http://localhost/group_2/";
 
 // đường dẫn website đến admin
 
