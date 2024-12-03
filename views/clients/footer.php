@@ -90,24 +90,25 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    const btnSearch = document.getElementById('btnSearch');
-    const keyword = document.getElementById('keyword');
+      btnSearch = document.getElementById('btnSearch');
+      keyword = document.getElementById('keyword');
 
-    // Lắng nghe sự kiện click của nút tìm kiếm
-    btnSearch.addEventListener('click', function(event) {
-        event.preventDefault();
-        // Định hướng trang đến URL tìm kiếm với từ khóa
-        location.href = "<?= ROOT_URL . '?ctl=search&keyword=' ?>" + encodeURIComponent(keyword.value);
-    });
+      // Lắng nghe sự kiện click của nút tìm kiếm
+      btnSearch.addEventListener('click', function(event) {
+          event.preventDefault();
+          // Định hướng trang đến URL tìm kiếm với từ khóa
+          location.href = "<?= ROOT_URL . '?ctl=search&keyword=' ?>" + keyword.value;
+      });
 
-    // Lắng nghe sự kiện nhấn phím Enter trong ô tìm kiếm
-    keyword.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {  // Kiểm tra nếu phím Enter được nhấn
-            event.preventDefault();  // Ngừng hành động mặc định (gửi form)
-            location.href = "<?= ROOT_URL . '?ctl=search&keyword=' ?>" + encodeURIComponent(keyword.value);  // Chuyển hướng đến URL tìm kiếm
-        }
-    });
-</script>
+      // Lắng nghe sự kiện nhấn phím Enter trong ô tìm kiếm
+      keyword.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter') { // Kiểm tra nếu phím Enter được nhấn
+              event.preventDefault(); // Ngừng hành động mặc định (gửi form)
+              location.href = "<?= ROOT_URL . '?ctl=search&keyword=' ?>" + encodeURIComponent(keyword
+                  .value); // Chuyển hướng đến URL tìm kiếm
+          }
+      });
+  </script>
 
 
   </body>

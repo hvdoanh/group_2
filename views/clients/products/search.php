@@ -92,14 +92,15 @@
 
         <div class="row">
             <div class="section-title text-center col mb-30">
-                <h1>Tìm kiếm: <?= htmlspecialchars($keyword) ?></h1>
+                <h1>Tìm kiếm: <?= $keyword ?></h1>
                 <p>All popular product find here</p>
             </div>
         </div>
 
         <div class="row mbn-40">
-            <?php if (count($products) > 0): // Kiểm tra nếu có sản phẩm ?>
-                <?php foreach($products as $product): ?>
+            <?php if ($products): // Kiểm tra nếu có sản phẩm 
+            ?>
+                <?php foreach ($products as $product): ?>
                     <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
                         <div class="product-item">
                             <div class="product-inner">
@@ -119,7 +120,9 @@
 
                                     <div class="content-left">
 
-                                        <h4 class="title"><a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>"><?= $product['name'] ?></a></h4>
+                                        <h4 class="title"><a
+                                                href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>"><?= $product['name'] ?></a>
+                                        </h4>
 
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -142,14 +145,14 @@
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                <?php endforeach ?>
             <?php else: ?>
                 <div class="col-12 mb-40">
                     <div class="alert alert-warning text-center">
-                        Không tìm thấy sản phẩm cho từ khóa <b><?= htmlspecialchars($keyword) ?></b>
+                        Không tìm thấy sản phẩm cho từ khóa <b><?= $keyword ?></b>
                     </div>
                 </div>
-            <?php endif; ?>
+            <?php endif ?>
         </div>
 
     </div>

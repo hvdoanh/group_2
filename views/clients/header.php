@@ -124,13 +124,17 @@
                             <div class="header-shop-links">
 
                                 <div class="header-search">
-                                    <button class="search-toggle"><img src="assets/images/icons/search.png"
-                                            alt="Search Toggle"><img class="toggle-close"
-                                            src="assets/images/icons/close.png" alt="Search Toggle"></button>
+                                    <button class="search-toggle">
+                                        <img src="assets/images/icons/search.png" alt="Search Toggle">
+                                        <img class="toggle-close" src="assets/images/icons/close.png"
+                                            alt="Search Toggle">
+                                    </button>
                                     <div class="header-search-wrap">
-                                        <form action="#">
-                                            <input type="text" placeholder="Type and hit enter">
-                                            <button><img src="assets/images/icons/search.png" alt="Search"></button>
+                                        <form role="search">
+                                            <input type="search" placeholder="Type and hit enter" id="keyword">
+                                            <button id="btnSearch">
+                                                <img src="assets/images/icons/search.png" alt="Search">
+                                            </button>
                                         </form>
                                     </div>
                                 </div>

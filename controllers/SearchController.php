@@ -1,7 +1,9 @@
 <?php
 
-class SearchController {
-    public function search() {
+class SearchController
+{
+    public function search()
+    {
         // Lấy từ khóa tìm kiếm từ GET hoặc mặc định là chuỗi rỗng
         $keyword = $_GET['keyword'] ?? '';
 
