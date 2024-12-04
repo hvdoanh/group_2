@@ -19,6 +19,7 @@ require_once __DIR__ . "/controllers/AuthController.php";
 require_once __DIR__ . "/controllers/CartController.php";
 require_once __DIR__ . "/controllers/SearchController.php";
 require_once __DIR__ . "/controllers/OrderController.php";
+require_once __DIR__ . "/controllers/ShopController.php";
 
 
 
@@ -41,6 +42,8 @@ match ($ctl) {
     'search' => (new SearchController)->search(),
     'list-order' => (new OrderController)->showOrderUser(),
     'order-detail-user' => (new OrderController)->detailOrderUser(),
+    'shop'=>(new ShopController)->shop(),
+    'blog'=>(new BlogController)->blog(),
     
     default => view('errors.404'),
 };

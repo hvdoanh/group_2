@@ -18,3 +18,4 @@ class HomeController
         return view('clients.home', compact('wens', 'womens', 'title', 'categories'));
     }
 }
+

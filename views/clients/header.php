@@ -172,33 +172,15 @@
                                                 <?php endforeach  ?>
                                             </ul>
                                         </li>
-                                        <li><a href="shop.html">SHOP</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                <li><a href="single-product.html">Single Product</a></li>
-                                                <li><a href="single-product-left-sidebar.html">Single Product Left
-                                                        Sidebar</a></li>
-                                                <li><a href="single-product-right-sidebar.html">Single Product Right
-                                                        Sidebar</a></li>
-                                            </ul>
+                                        <li>
+                                       
+                                        <a href="<?= ROOT_URL . '?ctl=shop' ?>">SHOP</a>
                                         </li>
-                                        <li><a href="#">PAGES</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="login-register.html">Login & Register</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="404.html">404 Error</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">BLOG</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single-blog.html">Single Blog</a></li>
-                                            </ul>
+                                    
+                        
+                                        
+                                        <li><a href="<?= ROOT_URL . '?ctl=blog' ?>">BLOG</a></li>
+                                            
                                         </li>
                                         <li><a href="<?= ROOT_URL . '?ctl=list-order' ?>">ORDER HISTRORY</a></li>
                                     </ul>

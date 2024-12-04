@@ -46,5 +46,8 @@
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
+
             </div>
+            
+            <a href="<?= ROOT_URL?>">Đăng Xuất</a>
         </nav>

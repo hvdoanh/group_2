@@ -75,7 +75,7 @@
                         <button type="submit" class="btn btn-warning">
                             Cập nhật giỏ hàng
                         </button>
-                        <a href=" #">Continue Shopping</a>
+                        <a href=" <?=ROOT_URL ?>">Continue Shopping</a>
                     </div>
                     <div class="cart-coupon">
                         <h4>Coupon</h4>
