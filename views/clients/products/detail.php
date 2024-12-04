@@ -174,6 +174,26 @@
                                 made in Italy and manufactured with the greatest attention. Now Fashion extends
                                 to a range of accessories including shoes, hats, belts and more!</p>
                         </div>
+                    <h3><b>    Bình Luận </b> <h3>
+                        <div class="commmet">
+    <?php foreach($comments as $comment): ?>
+        <p>
+            <b><?= $comment['fullname'] ?></b> <?= date('d-m-Y H:i:s', strtotime($comment['created_at'])) ?><br>
+            <?= $comment['content'] ?>
+        </p>
+            <?php endforeach; ?>
+               </div>
+
+<?php if(isset($_SESSION['user'])): ?>
+    <form action="" method="post">
+        <textarea name="content" rows="3" cols="60" require id=></textarea>
+        <br>
+        <button type="submit">Gửi</button>
+    </form>
+<?php else: ?>
+    <div>Bạn cần <b><a href="<?= ROOT_URL . '?ctl=login' ?>">Đăng nhập</a></b></div>
+<?php endif; ?>
+
                         <div class="pro-info-tab tab-pane" id="data-sheet">
                             <table class="table-data-sheet">
                                 <tbody>

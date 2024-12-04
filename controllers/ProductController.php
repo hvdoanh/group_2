@@ -30,6 +30,18 @@ class ProductController
         $id = $_GET['id']; // id sp
 
         $product = (new Product)->find($id);
+        //Theem comment
+        if($_SERVER['REQUEST_METHOD'] === "POST"){
+            $data = $_POST;
+            //them product_id_ USer_id
+            $data['product_id'] =$id;
+            $data['user_id']=$_SESSION['user']['id'];
+            (new Comment)->create($data);
+
+
+            
+
+        }
 
         $title = $product['name'];
 
@@ -40,10 +52,14 @@ class ProductController
 
         // lưu thông itn uRI vào session
         $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
+        $_SESSION['totalQuantity']=(new CartController)->totalSumQuantity();
+        //lấy danh sách comment
+        $comments =(new Comment)->listCommentInProduct($id);
+    
 
         return view(
             'clients.products.detail',
-            compact('product', 'title', 'categories', 'productReleads')
+            compact('product', 'title', 'categories', 'productReleads','comments')
         );
     }
 }

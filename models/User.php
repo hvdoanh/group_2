@@ -1,7 +1,7 @@
 <?php
 
 class User extends BaseModel{
-    // lấy ra tất cả loại hàng
+    // lấy ra tất cả 
 
     public function all(){
         $sql = "SELECT * FROM users";
