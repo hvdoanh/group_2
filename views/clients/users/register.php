@@ -8,7 +8,7 @@
 
                 <h1>Register</h1>
                 <ul class="page-breadcrumb">
-                    <li><a href=" ">Home</a></li>
+                    <li><a href="ROOT_URL">Home</a></li>
                     <li><a href="<?= ROOT_URL . '?ctl=login' ?>">Login</a></li>
                 </ul>
 
@@ -20,6 +20,16 @@
 <!-- Page Section Start -->
 <div class="page-section section section-padding">
     <div class="container">
+    <?php if ($error !== ""): ?>
+    <div class="alert alert-danger">
+        <?= ($error) ?>
+    </div>
+<?php elseif ($message !== ""): ?>
+    <div class="alert alert-success">
+        <?= ($message) ?>
+    </div>
+<?php endif; ?>
+
 
 
         <div class="login-register-form-wrap">

@@ -54,6 +54,7 @@ class CartController
         if (!isset($_SESSION['user'])) {
             return header("Location: " . ROOT_URL . '?ctl=login');
         }
+        
 
         $carts = $_SESSION['cart'] ?? [];
         $sumPrice = (new CartController)->sumPrice();

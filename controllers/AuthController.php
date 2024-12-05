@@ -9,28 +9,44 @@ class AuthController
     public function register()
     {
 
+        $error = '';
+        $message='';
+
+
         $categories = (new Category)->all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = $_POST;
-            // dd($data);
+                $data = $_POST;
+                // dd($data);
+                $fullname = trim($_POST['fullname']);
+        $email = trim($_POST['email']);
+        // mã hoá
+        $password = $_POST['password'];
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $phone = trim($_POST['phone']);
+        $address = trim($_POST['address']);
 
-            // mã hoá
-            $password = $_POST['password'];
-            $password = password_hash($password, PASSWORD_DEFAULT);
+        
 
-            // đưa vào data
-            $data['password'] = $password;
+        // Kiểm tra các trường không được để trống
+    if (empty($fullname) || empty($email) || empty($password) || empty($phone) || empty($address)) {
+        $error = 'Tất cả các trường đều bắt buộc!';
+    } else {
 
-            // cho vào db
-            (new User)->create($data);
-            // thoogn báo 
-            $_SESSION['message'] = "Đăng kí thành công";
-            header("Location: " . ROOT_URL . "?ctl=login");
-            die;
-        }
+                     // đưa vào data
+         $data['password'] = $password;
 
-        return view('clients.users.register', compact('categories'));
+
+           // cho vào db
+           (new User)->create($data);
+                   // thoogn báo 
+                   $message = "Đăng kí thành công";
+                   header("Location: " . ROOT_URL . "?ctl=login");
+                   die;
+    }
+        };
+
+        return view('clients.users.register', compact('categories','error','message'));
     }
 
     // đăng nhập

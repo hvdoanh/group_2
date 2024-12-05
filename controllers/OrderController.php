@@ -39,7 +39,13 @@ class OrderController
 
     // hiện thị danh sách hoá đơn  của user theo id
     public function showOrderUser()
+
+    
     {
+        
+        if (!isset($_SESSION['user'])) {
+            return header("Location: " . ROOT_URL . '?ctl=login');
+        }
 
         $user_id = $_SESSION['user']['id'];
 
