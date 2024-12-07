@@ -98,56 +98,59 @@
         </div>
 
         <div class="row mbn-40">
-            <?php foreach($products as $product) :?>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
+            <?php foreach ($products as $product) : ?>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
 
-                <div class="product-item">
-                    <div class="product-inner">
+                    <div class="product-item">
+                        <div class="product-inner">
 
-                        <div class="image">
-                            <img src="<?= ROOT_URL . $product['image'] ?>" alt="Image">
+                            <div class="image">
+                                <img src="<?= ROOT_URL . $product['image'] ?>" alt="Image">
 
-                            <div class="image-overlay">
-                                <div class="action-buttons">
-                                    <button>add to cart</button>
-                                    <button>add to wishlist</button>
+                                <div class="image-overlay">
+                                    <div class="action-buttons">
+                                        <button>
+                                            <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>">
+                                                ADD TO CART</a>
+                                        </button>
+                                        <button>add to wishlist</button>
+                                    </div>
                                 </div>
+
+                            </div>
+
+                            <div class="content">
+
+                                <div class="content-left">
+
+                                    <h4 class="title"><a
+                                            href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>"><?= $product['name'] ?></a>
+                                    </h4>
+
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                    <h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span>
+                                    </h5>
+
+
+                                </div>
+
+                                <div class="content-right">
+                                    <span class="price">$<?= $product['price'] ?></span>
+                                </div>
+
                             </div>
 
                         </div>
-
-                        <div class="content">
-
-                            <div class="content-left">
-
-                                <h4 class="title"><a
-                                        href="<?= ROOT_URL . '?ctl=detail&id=' .$product['id'] ?>"><?= $product['name']?></a>
-                                </h4>
-
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-
-                                <h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span>
-                                </h5>
-
-
-                            </div>
-
-                            <div class="content-right">
-                                <span class="price">$<?= $product['price']?></span>
-                            </div>
-
-                        </div>
-
                     </div>
-                </div>
 
-            </div>
+                </div>
             <?php endforeach ?>
 
 
